@@ -5,8 +5,9 @@ import type { RouteConfig } from "vue-router";
 
 import { store } from "@/store";
 
-Vue.use(VueRouter);
+import { fetchCompanyList } from "@/api";
 
+Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
   {
@@ -42,6 +43,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const meta = to.meta;
+
+  fetchCompanyList();
+
+  console.log("after fetchCompanyList");
 
   // const isAuthenticated = store.getters["user/isAuthenticated"];
 
