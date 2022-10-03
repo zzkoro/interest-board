@@ -44,9 +44,12 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   const meta = to.meta;
 
-  fetchCompanyList();
+  const fetchPromise = fetchCompanyList();
 
-  console.log("after fetchCompanyList");
+  // fetchPromise.then((response) => {
+  //   console.log("after fetchCompanyList");
+  //   console.log(response);
+  // });
 
   // const isAuthenticated = store.getters["user/isAuthenticated"];
 
