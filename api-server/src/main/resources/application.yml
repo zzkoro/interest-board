@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+#logging:
+#  level:
+#    root: debug
+##    org.springframwwork.web: debug
+##    org.hibernate.SQL: debug
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/fssdb
+    username: fssuser
+    password: fsspwd
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
